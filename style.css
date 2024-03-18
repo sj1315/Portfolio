@@ -80,9 +80,31 @@ section {
 }
 
 .navbar a{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
     font-size: 2.1rem;
     color: var(--text-color);
     margin-left: 4rem;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left:  0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: #0ef;
+    border-radius: 30px;
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+
+.navbar a:hover::after {
+    color: var(--main-color);
+    transform: scaleX(1);
+    transform-origin: center;
 }
 
 .navbar a.active {
@@ -90,18 +112,6 @@ section {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-size: 2.5rem;
-}
-
-.navbar a:hover {
-    color: var(--main-color);
-    text-shadow: 0 0 10px rgba(18, 247, 255, 0.4),
-    0 0 20px rgba(18, 247, 255, 0.4),
-    0 0 30px rgba(18, 247, 255, 0.4),
-    0 0 400px rgba(18, 247, 255, 0.4),
-    0 0 70px rgba(18, 247, 255, 0.4),
-    0 0 80px rgba(18, 247, 255, 0.4),
-    0 0 100px rgba(18, 247, 255, 0.4),
-    0 0 150px rgba(18, 247, 255, 0.4);
 }
 
 #menu-icon {
@@ -272,14 +282,11 @@ section {
 
 .about-right .address {
     margin: 25px 0;
+    display: grid;
 }
 
 .about-right .address ul li {
     margin-bottom: 5px;
-}
-
-.address {
-    display: grid;
 }
 
 .address .address-logo {
@@ -307,11 +314,49 @@ section {
     margin-right: 5px;
 }
 
-.about-right .prof-skills ul {
+
+.prof-skills ul {
     width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.prof-skills .one {
+    border-style: outset;
+    border-width: 1px;
+    border-color: var(--main-color);
+    border-radius: 1rem;
+    padding: 6px;
+    text-align: center;
+}
+
+.prof-skills .two {
+    border-style: outset;
+    border-width: 1px;
+    border-color: var(--main-color);
+    border-radius: 1rem;
+    padding: 6px;
+    text-align: center;
+}
+
+.prof-skills .three {
+    border-style: outset;
+    border-width: 1px;
+    border-color: var(--main-color);
+    border-radius: 1rem;
+    padding: 6px;
+    text-align: center;
+}
+
+.prof-skills .four {
+    border-style: outset;
+    border-width: 1px;
+    border-color: var(--main-color);
+    border-radius: 1rem;
+    padding: 6px;
+    text-align: center;
 }
 
 .prof-skills h3 {
@@ -475,7 +520,7 @@ section {
     max-width: 70rem;
     margin: 1rem auto;
     text-align: center;
-    margin-bottom: rem;
+    margin-bottom: 3rem;
 }
 
 form .input-box {
@@ -677,7 +722,7 @@ footer p {
     }
 
     .services h2 {
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
     }
 
     .projects h2 {
@@ -686,10 +731,6 @@ footer p {
 
     .project-container {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-right {
-        grid-row: inherit;
     }
 }
 
@@ -709,7 +750,7 @@ footer p {
 }
 
 @media (max-width: 365px) {
-    .home-img igm {
+    .home-img img {
         width: 90vw;
     }
 
