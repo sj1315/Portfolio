@@ -145,10 +145,45 @@ ScrollReveal({
     reset: true,
     distance: '50px',
     duration: 1500,
+    delay: 3225
+});
+
+ScrollReveal().reveal('.header',{origin:'right'});
+
+ScrollReveal({
+    reset: true,
+    distance: '50px',
+    duration: 1500,
     delay: 100
 });
 
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .service-container, .project-container, .contact-form', { origin: 'bottom' });
 ScrollReveal().reveal('.home-content h1, .about-left img', { origin: 'left' });
-ScrollReveal().reveal('.header, .home-content p, .about-right', { origin: 'right' });
+ScrollReveal().reveal('.home-content p, .about-right', { origin: 'right' });
+
+//*=========== Preloader ===========*//
+gsap.fromTo(
+    ".loading-page",
+    { opacity: 1 },
+    {
+    opacity: 0,
+    display: "none",
+    duration: 1.5,
+    delay: 3.5,
+    }
+);
+
+gsap.fromTo(
+    ".logo-name",
+    {
+    y: 50,
+    opacity: 0,
+    },
+    {
+    y: 0,
+    opacity: 1,
+    duration: 2,
+    delay: 0.5,
+    }
+);
