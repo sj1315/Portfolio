@@ -145,7 +145,7 @@ ScrollReveal({
     reset: true,
     distance: '50px',
     duration: 1500,
-    delay: 3225
+    delay: 3205
 });
 
 ScrollReveal().reveal('.header',{origin:'right'});
@@ -169,7 +169,7 @@ gsap.fromTo(
     {
     opacity: 0,
     display: "none",
-    duration: 1.5,
+    duration: .3,
     delay: 3.5,
     }
 );
